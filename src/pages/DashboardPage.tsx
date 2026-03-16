@@ -5,6 +5,9 @@ import {
 import { CreditCard, DollarSign, Users, Wallet } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { PageHeader } from "@/components/ui/page-header"
+import { SalesOverviewSection } from "@/components/dashboard/SalesOverviewSection"
+import { PlatformBreakdownSection } from "@/components/dashboard/PlatformBreakdownSection"
+import { PendingApprovalsSection } from "@/components/dashboard/PendingApprovalsSection"
 
 const stats: StatsCardProps[] = [
   {
@@ -63,6 +66,15 @@ export default function DashboardPage() {
         {stats.map((s) => (
           <StatsCard key={s.title} {...s} />
         ))}
+      </div>
+
+      <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-[minmax(0,1.9fr)_320px]">
+        <SalesOverviewSection />
+
+        <div className="grid gap-6">
+          <PlatformBreakdownSection />
+          <PendingApprovalsSection />
+        </div>
       </div>
     </div>
   )
