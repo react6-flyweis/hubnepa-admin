@@ -14,7 +14,7 @@ export default function DashLayout() {
       {/* main content area; SidebarInset styles adjust when sidebar is inset/collapsed */}
       <SidebarInset className="bg-[#F9FAFB]">
         <DashHeader />
-        <div className="flex-1 overflow-auto">
+        <div className="flex-1 overflow-auto p-5">
           <Outlet />
         </div>
       </SidebarInset>
