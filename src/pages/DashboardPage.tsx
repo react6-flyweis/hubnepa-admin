@@ -4,6 +4,7 @@ import {
 } from "@/components/dashboard/StatsCard"
 import { CreditCard, DollarSign, Users, Wallet } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Link } from "react-router"
 import { PageHeader } from "@/components/ui/page-header"
 import { SalesOverviewSection } from "@/components/dashboard/SalesOverviewSection"
 import { PlatformBreakdownSection } from "@/components/dashboard/PlatformBreakdownSection"
@@ -55,9 +56,11 @@ export default function DashboardPage() {
             <Button variant="outline" size="lg">
               Download Report
             </Button>
-            <Button size="lg" className="bg-black">
-              System Health
-            </Button>
+            <Link to="/system-health">
+              <Button size="lg" className="bg-black">
+                System Health
+              </Button>
+            </Link>
           </div>
         }
       />
