@@ -33,7 +33,7 @@ export default function DashSidebar() {
   const { toggleSidebar } = useSidebar()
 
   const menu = [
-    { label: "Dashboard", icon: LayoutDashboard, to: "/dashboard", end: true },
+    { label: "Dashboard", icon: LayoutDashboard, to: "/", end: true },
     { label: "User Management", icon: Users, to: "/users" },
     { label: "Partner Management", icon: Store, to: "/partners" },
     { label: "Restaurant Panel", icon: ForkKnifeCrossed, to: "/restaurants" },

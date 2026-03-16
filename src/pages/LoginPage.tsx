@@ -132,7 +132,7 @@ export default function LoginPage() {
     values.reset(data)
 
     // redirect to dashboard on successful login
-    navigate("/dashboard", { replace: true })
+    navigate("/", { replace: true })
   }
 
   function togglePasswordVisibility() {
