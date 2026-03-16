@@ -1,5 +1,20 @@
 import { NavLink } from "react-router"
-import { LogOut, X, LayoutDashboard, ShieldAlert } from "lucide-react"
+import {
+  LogOut,
+  X,
+  LayoutDashboard,
+  ShieldAlert,
+  Users,
+  Store,
+  Megaphone,
+  ShieldCheck,
+  ForkKnifeCrossed,
+  ShoppingBag,
+  FileText,
+  Wallet,
+  BarChart3,
+  Activity,
+} from "lucide-react"
 
 import {
   Sidebar,
@@ -19,6 +34,19 @@ export default function DashSidebar() {
 
   const menu = [
     { label: "Dashboard", icon: LayoutDashboard, to: "/dashboard", end: true },
+    { label: "User Management", icon: Users, to: "/users" },
+    { label: "Partner Management", icon: Store, to: "/partners" },
+    { label: "Restaurant Panel", icon: ForkKnifeCrossed, to: "/restaurants" },
+    { label: "Retailer Panel", icon: Store, to: "/retailers" },
+    { label: "Supplier Panel", icon: ForkKnifeCrossed, to: "/suppliers" },
+    { label: "Product & Food", icon: ShoppingBag, to: "/products" },
+    { label: "Order Management", icon: FileText, to: "/orders" },
+    { label: "Feedback & Complaints", icon: Wallet, to: "/feedback" },
+    { label: "Finance & Settlements", icon: Wallet, to: "/finance" },
+    { label: "Sales & Analytics", icon: BarChart3, to: "/analytics" },
+    { label: "Marketing & Content", icon: Megaphone, to: "/marketing" },
+    { label: "Access Control", icon: ShieldCheck, to: "/access-control" },
+    { label: "System Health", icon: Activity, to: "/dashboard/system-health" },
   ]
 
   return (
@@ -37,14 +65,14 @@ export default function DashSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>
-            <SidebarMenu className="space-y-3">
+            <SidebarMenu className="space-y-2">
               {menu.map((item) => (
                 <SidebarMenuItem key={item.to}>
                   <NavLink to={item.to} className="w-full" end={item.end}>
                     {({ isActive }) => (
                       <SidebarMenuButton
                         isActive={isActive}
-                        className="h-10 capitalize"
+                        className="h-10 text-white capitalize"
                       >
                         <item.icon className="size-4" />
                         <span>{item.label}</span>
@@ -69,7 +97,7 @@ export default function DashSidebar() {
               }}
             >
               <LogOut className="size-4" />
-              <span>Sign Out</span>
+              <span>Logout</span>
             </button>
           </SidebarMenuItem>
         </SidebarMenu>
