@@ -72,12 +72,10 @@ const stepConfig = [
   },
 ] as const
 
-const requiredFileSchema = z
-  .unknown()
-  .refine(
-    (value): value is File => value instanceof File,
-    "This file is required"
-  )
+const requiredFileSchema = z.custom<File>(
+  (value) => value instanceof File,
+  "This file is required"
+)
 
 const addPartnerSchema = z.object({
   partnerType: z.enum(["restaurant", "retailer"]),
