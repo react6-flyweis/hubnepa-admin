@@ -13,6 +13,17 @@ const DeliveryLogsPage = lazy(() => import("@/pages/DeliveryLogsPage"))
 const ManagePermissionsPage = lazy(
   () => import("@/pages/ManagePermissionsPage")
 )
+const PartnerManagementPage = lazy(
+  () => import("@/pages/PartnerManagementPage")
+)
+const AddPartnerPage = lazy(() => import("@/pages/AddPartnerPage"))
+const PartnerDetailsPage = lazy(() => import("@/pages/PartnerDetailsPage"))
+const RestaurantPanelPage = lazy(() => import("@/pages/RestaurantPanelPage"))
+const RetailerPanelPage = lazy(() => import("@/pages/RetailerPanelPage"))
+const PartnerVerificationDocumentsPage = lazy(
+  () => import("@/pages/PartnerVerificationDocumentsPage")
+)
+const PartnerSettingsPage = lazy(() => import("@/pages/PartnerSettingsPage"))
 
 import DashLayout from "@/components/layouts/DashLayout"
 import { NotFound } from "@/pages/NotFoundPage"
@@ -39,6 +50,19 @@ export const Routes: RouteObject[] = [
       },
       { path: "notifications", element: <NotificationsPage /> },
       { path: "system-health", element: <SystemHealthPage /> },
+      { path: "partners", element: <PartnerManagementPage /> },
+      { path: "restaurants", element: <RestaurantPanelPage /> },
+      { path: "retailers", element: <RetailerPanelPage /> },
+      { path: "partners/new", element: <AddPartnerPage /> },
+      { path: "partners/:partnerId", element: <PartnerDetailsPage /> },
+      {
+        path: "partners/:partnerId/settings",
+        element: <PartnerSettingsPage />,
+      },
+      {
+        path: "partners/:partnerId/verification-documents",
+        element: <PartnerVerificationDocumentsPage />,
+      },
       { path: "*", element: <NotFound /> },
     ],
   },
