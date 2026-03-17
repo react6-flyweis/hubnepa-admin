@@ -33,7 +33,7 @@ export default function UserManagementPage() {
             </Button>
             <Button
               size="lg"
-              className="gap-2"
+              className="gap-2 bg-black"
               onClick={() => setIsAddAdminOpen(true)}
             >
               <Plus className="h-4 w-4" />
