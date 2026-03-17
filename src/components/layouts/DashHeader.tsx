@@ -65,7 +65,7 @@ export default function DashHeader() {
               "bg-primary/10 text-primary hover:bg-primary/15"
           )}
         >
-          <Link to="/dashboard/notifications" aria-label="View notifications">
+          <Link to="/notifications" aria-label="View notifications">
             <Bell className="h-5 w-5" />
             <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-red-500" />
           </Link>
