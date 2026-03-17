@@ -403,7 +403,7 @@ export default function NotificationsPage() {
   }
 
   return (
-    <div className="p-4 sm:p-6">
+    <div className="">
       <PageHeader
         title="Notifications"
         description="System alerts, partner requests, and important updates."
