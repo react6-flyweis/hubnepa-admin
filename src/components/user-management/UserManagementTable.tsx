@@ -147,7 +147,9 @@ export function UserManagementTable({ users }: UserManagementTableProps) {
                   <DropdownMenuContent align="end" className="w-52">
                     <DropdownMenuLabel>User Actions</DropdownMenuLabel>
                     <DropdownMenuItem
-                      onSelect={() => navigate(`/users/${user.id}/orders`)}
+                      onSelect={() =>
+                        navigate(`/users/${user.id}/order-history`)
+                      }
                     >
                       <History className="h-4 w-4" />
                       Order History
