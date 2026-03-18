@@ -14,9 +14,14 @@ import {
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { PageHeader } from "@/components/ui/page-header"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { RetailerPanelOverviewTab } from "@/components/retailer-panel/RetailerPanelOverviewTab"
 import { RetailerPanelProductsTab } from "@/components/retailer-panel/RetailerPanelProductsTab"
+import { RetailerPanelOrdersTab } from "@/components/retailer-panel/RetailerPanelOrdersTab"
+import { RetailerPanelCustomersTab } from "@/components/retailer-panel/RetailerPanelCustomersTab"
+import { RetailerPanelOffersTab } from "@/components/retailer-panel/RetailerPanelOffersTab"
+import { RetailerPanelRefundsTab } from "@/components/retailer-panel/RetailerPanelRefundsTab"
+import { RetailerPanelFinanceTab } from "@/components/retailer-panel/RetailerPanelFinanceTab"
 import { cn } from "@/lib/utils"
 
 type RetailerTab =
@@ -27,7 +32,7 @@ type RetailerTab =
   | "offers"
   | "refunds"
   | "finance"
-  | "analytics"
+  | "reports"
 
 interface StatItem {
   title: string
@@ -49,7 +54,7 @@ const tabs: Array<{
   { value: "offers", label: "Offers", icon: Tag },
   { value: "refunds", label: "Refunds", icon: RotateCcw },
   { value: "finance", label: "Finance", icon: Wallet },
-  { value: "analytics", label: "Analytics", icon: BarChart3 },
+  { value: "reports", label: "Reports", icon: BarChart3 },
 ]
 
 const stats: StatItem[] = [
@@ -116,19 +121,6 @@ function StatCard({ item }: { item: StatItem }) {
   )
 }
 
-function TabComingSoon({ tabLabel }: { tabLabel: string }) {
-  return (
-    <Card className="rounded-2xl border-slate-200 py-10 ring-0">
-      <CardContent className="text-center">
-        <p className="text-base font-semibold text-slate-900">{tabLabel}</p>
-        <p className="mt-2 text-sm text-slate-500">
-          This section is intentionally left as placeholder content for now.
-        </p>
-      </CardContent>
-    </Card>
-  )
-}
-
 export default function RetailerPanelPage() {
   return (
     <div className="space-y-6 pb-8">
@@ -165,14 +157,11 @@ export default function RetailerPanelPage() {
 
         <RetailerPanelOverviewTab />
         <RetailerPanelProductsTab />
-
-        {tabs
-          .filter((tab) => tab.value !== "overview" && tab.value !== "products")
-          .map((tab) => (
-            <TabsContent key={tab.value} value={tab.value} className="mt-0">
-              <TabComingSoon tabLabel={tab.label} />
-            </TabsContent>
-          ))}
+        <RetailerPanelOrdersTab />
+        <RetailerPanelCustomersTab />
+        <RetailerPanelOffersTab />
+        <RetailerPanelRefundsTab />
+        <RetailerPanelFinanceTab />
       </Tabs>
     </div>
   )
