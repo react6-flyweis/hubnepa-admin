@@ -13,7 +13,7 @@ import {
   FileText,
   Wallet,
   BarChart3,
-  Activity,
+  Settings,
 } from "lucide-react"
 
 import {
@@ -46,7 +46,7 @@ export default function DashSidebar() {
     { label: "Sales & Analytics", icon: BarChart3, to: "/analytics" },
     { label: "Marketing & Content", icon: Megaphone, to: "/marketing" },
     { label: "Access Control", icon: ShieldCheck, to: "/access-control" },
-    { label: "System Health", icon: Activity, to: "/dashboard/system-health" },
+    { label: "Settings", icon: Settings, to: "/dashboard/settings" },
   ]
 
   return (
