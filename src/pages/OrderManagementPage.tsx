@@ -298,19 +298,16 @@ export default function OrderManagementPage() {
                       <span className="block leading-5">{order.date}</span>
                       <span className="block leading-5">{order.time}</span>
                     </TableCell>
-                    <TableCell className="px-5 py-5 align-top text-base font-semibold text-slate-800">
+                    <TableCell className="px-5 py-5 align-top font-semibold text-slate-800">
                       {order.customer}
                     </TableCell>
-                    <TableCell className="px-5 py-5 align-top text-base font-medium text-slate-600">
+                    <TableCell className="px-5 py-5 align-top font-medium text-slate-600">
                       {order.vendor}
                     </TableCell>
                     <TableCell className="px-5 py-5 align-top">
                       <Badge
                         variant="outline"
-                        className={cn(
-                          "h-6 rounded-full px-3 text-sm font-semibold",
-                          orderTypeColorMap[order.type]
-                        )}
+                        className={cn("", orderTypeColorMap[order.type])}
                       >
                         {order.type}
                       </Badge>
@@ -318,15 +315,12 @@ export default function OrderManagementPage() {
                     <TableCell className="px-5 py-5 align-top">
                       <Badge
                         variant="outline"
-                        className={cn(
-                          "h-6 rounded-full px-3 text-sm font-semibold",
-                          orderStatusColorMap[order.status]
-                        )}
+                        className={cn("", orderStatusColorMap[order.status])}
                       >
                         {order.status}
                       </Badge>
                     </TableCell>
-                    <TableCell className="px-5 py-5 text-right text-lg font-semibold text-slate-800">
+                    <TableCell className="px-5 py-5 text-right text-base font-semibold text-slate-800">
                       ${order.amount.toFixed(2)}
                     </TableCell>
                   </TableRow>
