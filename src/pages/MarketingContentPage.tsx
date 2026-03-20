@@ -1,4 +1,5 @@
 import { Plus, Search } from "lucide-react"
+import { Link } from "react-router"
 
 import { Button } from "@/components/ui/button"
 import { PageHeader } from "@/components/ui/page-header"
@@ -7,6 +8,7 @@ import { AllCampaignsTab } from "@/components/marketing/AllCampaignsTab"
 import { BannersTab } from "@/components/marketing/BannersTab"
 import { CouponsTab } from "@/components/marketing/CouponsTab"
 import { MarketingOverviewTab } from "@/components/marketing/MarketingOverviewTab"
+import { PushNotificationsTab } from "@/components/marketing/PushNotificationsTab"
 
 export default function MarketingContentPage() {
   return (
@@ -16,14 +18,18 @@ export default function MarketingContentPage() {
         description="Manage banners, coupons, push notifications and SEO."
         right={
           <div className="flex flex-wrap gap-2">
-            <Button variant="outline" className="px-3">
-              <Search className="size-4" />
-              SEO Settings
-            </Button>
-            <Button className="bg-emerald-500 px-3 text-white hover:bg-emerald-600">
-              <Plus className="size-4" />
-              Create Campaign
-            </Button>
+            <Link to="/marketing/seo">
+              <Button variant="outline" className="px-3">
+                <Search className="size-4" />
+                SEO Settings
+              </Button>
+            </Link>
+            <Link to="/marketing/campaigns/new">
+              <Button className="bg-emerald-500 px-3 text-white hover:bg-emerald-600">
+                <Plus className="size-4" />
+                Create Campaign
+              </Button>
+            </Link>
           </div>
         }
       />
@@ -79,7 +85,7 @@ export default function MarketingContentPage() {
         </TabsContent>
 
         <TabsContent value="notifications" className="mt-3">
-          <MarketingOverviewTab />
+          <PushNotificationsTab />
         </TabsContent>
       </Tabs>
     </div>
