@@ -18,6 +18,7 @@ const FinanceSettlementsPage = lazy(
   () => import("@/pages/FinanceSettlementsPage")
 )
 const AccessControlPage = lazy(() => import("@/pages/AccessControlPage"))
+const AddRolePage = lazy(() => import("@/pages/AddRolePage"))
 const ManagePermissionsPage = lazy(
   () => import("@/pages/ManagePermissionsPage")
 )
@@ -32,6 +33,8 @@ const SupplierPanelPage = lazy(() => import("@/pages/SupplierPanelPage"))
 const ProductFoodPage = lazy(() => import("@/pages/ProductFoodPage"))
 const SalesAnalyticsPage = lazy(() => import("@/pages/SalesAnalyticsPage"))
 const MarketingContentPage = lazy(() => import("@/pages/MarketingContentPage"))
+const SEOSettingsPage = lazy(() => import("@/pages/SEOSettingsPage"))
+const CreateCampaignPage = lazy(() => import("@/pages/CreateCampaignPage"))
 const AddProductPage = lazy(() => import("@/pages/AddProductPage"))
 const AddMenuItemPage = lazy(() => import("@/pages/AddMenuItemPage"))
 const EditMenuItemPage = lazy(() => import("@/pages/EditMenuItemPage"))
@@ -60,6 +63,8 @@ export const Routes: RouteObject[] = [
       { path: "feedback", element: <FeedbackComplaintsPage /> },
       { path: "finance", element: <FinanceSettlementsPage /> },
       { path: "access-control", element: <AccessControlPage /> },
+      { path: "access-control/new-role", element: <AddRolePage /> },
+      { path: "access-control/roles/:roleId/edit", element: <AddRolePage /> },
       { path: "dashboard/settings", element: <PlatformSettingsPage /> },
       { path: "order-history", element: <OrderHistoryPage /> },
       { path: "users/:userId/order-history", element: <OrderHistoryPage /> },
@@ -78,6 +83,8 @@ export const Routes: RouteObject[] = [
       { path: "products", element: <ProductFoodPage /> },
       { path: "analytics", element: <SalesAnalyticsPage /> },
       { path: "marketing", element: <MarketingContentPage /> },
+      { path: "marketing/seo", element: <SEOSettingsPage /> },
+      { path: "marketing/campaigns/new", element: <CreateCampaignPage /> },
       { path: "products/new", element: <AddProductPage /> },
       { path: "products/menu/new", element: <AddMenuItemPage /> },
       { path: "products/menu/:menuItemId/edit", element: <EditMenuItemPage /> },
